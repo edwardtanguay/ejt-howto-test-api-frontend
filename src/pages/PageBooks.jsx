@@ -17,12 +17,19 @@ export const PageBooks = () => {
 		<>
 			<h2>Books</h2>
 			<p>There are {books.length} books.</p>
-
-			<ul>
+			<div className="books">
 				{books.map((book, index) => {
-					return <li key={index}>{book.title}</li>;
+					return (
+						<div key={index} className="book">
+							<img src={`https://edwardtanguay.netlify.app/share/images/techBooks/${book.idCode}.jpg`} alt="book"/>
+							<div className="info">
+							<div className="title">{book.title}</div>
+							<div className="description">{book.description}</div>
+							</div>
+						</div>
+					);
 				})}
-			</ul>
+			</div>
 		</>
 	);
 };
